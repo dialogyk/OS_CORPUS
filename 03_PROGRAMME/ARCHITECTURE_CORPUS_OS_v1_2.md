@@ -8,7 +8,9 @@ Modification v1.0 -> v1.1 :
 
 Modification v1.1 -> v1.2 :
 - JONCTION_Bilaterale_OS_v0_9.md ajoute en 03_PROGRAMME (produit par sequence de stabilisation tripartite -- 15.03.2026)
-- Total corpus mis a jour : 25 -> 26 fichiers
+- PREREG_OS_Phase3_v1_0.md ajoute en 03_PROGRAMME (absent de v1.1 par omission)
+- ARCHITECTURE_CORPUS_OS_v1_1.md retire du corpus -- remplace par v1.2
+- Total corpus mis a jour : 25 -> 27 fichiers
 
 ---
 
@@ -172,6 +174,10 @@ Il ne decrit pas une phase -- il pose le cadre global.
 |   (source : PREREG_OS_Phase2_v1_0.pdf -- categorie B)
 |   Statut : pre-enregistrement Phase 2
 |
+|-- PREREG_OS_Phase3_v1_0.md
+|   (source : PREREG_OS_Phase3_v1_0.pdf -- categorie B)
+|   Statut : pre-enregistrement Phase 3 -- minimal par construction
+|
 |-- PREREG_OS_Technique_v1_0.md
 |   (source : PREREG_OS_Technique_v1_0.pdf -- categorie B)
 |   Statut : pre-enregistrement technique multi-pilotes
@@ -279,12 +285,13 @@ OS_CORPUS/
 |-- 02_METHODE/                                 (1 fichier)
 |   |-- Dialogyk_v2_2_condense.md
 |
-|-- 03_PROGRAMME/                               (7 fichiers)
+|-- 03_PROGRAMME/                               (8 fichiers)
 |   |-- DOCUMENT_ZERO_v1_0.md
 |   |-- OS_Document_Fondateur_v1_0.md
 |   |-- PREREG_OS_v1_6.md
 |   |-- PREREG_OS_Amendement_v1_2.md
 |   |-- PREREG_OS_Phase2_v1_0.md
+|   |-- PREREG_OS_Phase3_v1_0.md
 |   |-- PREREG_OS_Technique_v1_0.md
 |   |-- JONCTION_Bilaterale_OS_v0_9.md
 |
@@ -304,7 +311,7 @@ OS_CORPUS/
     |-- AXIS_Claude_Sonnet_4_6_v2_0.md
 ```
 
-Total : 26 fichiers (22 sources + 3 META + 1 specification JONCTION)
+Total : 27 fichiers (22 sources + 3 META + 1 specification JONCTION + 1 PREREG Phase3)
 
 ---
 
