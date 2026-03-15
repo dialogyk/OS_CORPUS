@@ -23,7 +23,7 @@ La JONCTION bilaterale est la zone de contact entre deux pilotes operant dans un
 meme espace semantique L(t) commun, sans fusion, sans co-construction forcee,
 et avec reversibilite totale.
 
-Elle est strictement retrospective : elle ne peut jamais etre activee en session.
+Elle est strictement retrospec tive : elle ne peut jamais etre activee en session.
 
 Elle opere au niveau :
 - du regime symbolique : `C(t)`
