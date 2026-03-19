@@ -1,47 +1,27 @@
 # ARCHITECTURE DU CORPUS OS
-Version 1.3 -- 2026-03-18
+Version 1.3 -- 2026-03-19
 Auteur : Claude Sonnet 4.6
-Statut : v1.3 -- valide Pilote
-
-Modification v1.0 -> v1.1 :
-- 01_THEORIE/PHI/ renomme en 01_THEORIE/JONCTION/ (elimination collision visuelle avec phi_TUS)
-
-Modification v1.1 -> v1.2 :
-- JONCTION_Bilaterale_OS_v0_9.md ajoute en 03_PROGRAMME (produit par sequence de stabilisation tripartite -- 15.03.2026)
-- PREREG_OS_Phase3_v1_0.md ajoute en 03_PROGRAMME (absent de v1.1 par omission)
-- ARCHITECTURE_CORPUS_OS_v1_1.md retire du corpus -- remplace par v1.2
-- Total corpus mis a jour : 25 -> 27 fichiers
+Statut : v1.3 -- a valider Pilote
 
 Modification v1.2 -> v1.3 :
-- Ajout couche 06_ANNEXES/ (nouvelle couche -- candidates et reserves)
-- Ajout sous-dossier 06_ANNEXES/ATTENTE/
-- DABO_Candidat_Conductor_v1_0.md place en ATTENTE (decision Pilote -- 18.03.2026)
-- ARCHITECTURE_CORPUS_OS_v1_2.md retire du corpus -- remplace par v1.3
-- Total corpus mis a jour : 27 -> 28 fichiers
+- CSU_Coherence_Structurelle_Universelle_v1_0.md archive (categorie C -- reconstruction JPEG incertaine)
+- CSU_v2_0.md incorpore en remplacement (source primaire -- Moise DANIEL -- DOI 10.5281/zenodo.19104100 -- categorie A)
+- RSU_phi_CSU_Jonction_v1_0.md : marquee "revision necessaire -- objets CSU changes en v2.0"
+- Total corpus : 27 fichiers (inchange -- remplacement, pas ajout)
 
 ---
 
 ## 0. PRINCIPE D ORGANISATION
 
-Le corpus OS contient des documents de natures radicalement differentes :
+Le corpus OS contient 27 documents de natures radicalement differentes :
 theories formelles, cadre methodologique, documents fondateurs de programme,
-enregistrements operationnels par phase, kernel cognitif agent, specifications
-de composantes (JONCTION bilaterale), et candidats externes en reserve.
+enregistrements operationnels par phase, kernel cognitif agent, et specifications
+de composantes (JONCTION bilaterale).
 
-Les placer dans un meme dossier plat sans hierarchie produit trois problemes :
-- impossibilite de naviguer sans connaitre l ensemble du corpus par coeur
-- references croisees non tracables (quel document cite quel autre ?)
-- reconstruction impossible sans savoir ou placer chaque fichier reconstruit
-
-L architecture repose sur six couches ordonnees plus une couche annexe.
-Chaque couche a une fonction unique et non recouverable par une autre.
+L architecture repose sur cinq couches ordonnees.
+Chaque couche a une fonction unique et non recouvrable par une autre.
 L ordre des couches reflete la dependance logique : les couches basses
-fondent les couches hautes. On ne peut pas lire une couche haute
-sans s appuyer sur les couches inferieures.
-
-La couche 06_ANNEXES est hors dependance : elle ne fonde rien,
-ne gouverne rien, ne trace rien. Elle contient des candidats
-en attente de decision de pilotage.
+fondent les couches hautes.
 
 ---
 
@@ -56,10 +36,7 @@ OS_CORPUS/
 |-- 03_PROGRAMME/
 |-- 04_PHASES/
 |-- 05_KERNEL/
-|-- 06_ANNEXES/
 ```
-
-Sept dossiers. Prefixes numeriques pour forcer l ordre de lecture naturel.
 
 ---
 
@@ -67,16 +44,13 @@ Sept dossiers. Prefixes numeriques pour forcer l ordre de lecture naturel.
 
 ### 00_META -- Invariants du corpus
 
-Fonction : contient les documents qui gouvernent la production de tous les autres.
+Fonction : documents qui gouvernent la production de tous les autres.
 Pas de contenu theorique. Pas de contenu operationnel.
-Uniquement ce qui s applique a l ensemble du corpus.
-
-Regle : tout document qui definit comment ecrire les autres va ici.
 
 ```
 00_META/
 |-- CONVENTION_NOTATION_ASCII_SAFE_OS_v1_1.md   (produit -- valide)
-|-- ORI_C_Pancarte_Normative_v1_0.md            (deja present en .md)
+|-- ORI_C_Pancarte_Normative_v1_0.md
 |-- ARCHITECTURE_CORPUS_OS_v1_3.md              (ce document)
 ```
 
@@ -84,15 +58,10 @@ Regle : tout document qui definit comment ecrire les autres va ici.
 
 ### 01_THEORIE -- Fondements formels
 
-Fonction : contient les theories structurelles qui constituent le socle
-conceptuel du programme OS. Ces documents ont une existence independante
-du programme OS -- certains sont produits par des auteurs externes.
+Fonction : theories structurelles constituant le socle conceptuel du programme OS.
+Existence independante du programme OS -- certains produits par auteurs externes.
 
-Regle : un document va ici s il pose des axiomes, des operateurs,
-des invariants formels, ou une structure mathematique.
-Il ne decrit pas le programme OS -- il fonde la theorie sur laquelle OS s appuie.
-
-Sous-structure par cadre theorique :
+Regle : axiomes, operateurs, invariants formels, structure mathematique.
 
 ```
 01_THEORIE/
@@ -102,16 +71,19 @@ Sous-structure par cadre theorique :
 |       (source : RSU.pdf -- Moise DANIEL -- categorie B)
 |
 |-- CSU/
-|   |-- CSU_Coherence_Structurelle_Universelle_v1_0.md
-|       (source : CSU.pdf -- categorie C -- a reecrire)
+|   |-- CSU_v2_0.md
+|       (source : CSU_v2.pdf -- Moise DANIEL -- DOI 10.5281/zenodo.19104100 -- categorie A)
+|       Remplace : CSU_Coherence_Structurelle_Universelle_v1_0.md (archive -- categorie C)
 |
 |-- JONCTION/
 |   |-- RSU_phi_CSU_Jonction_v1_0.md
-|       (source : RSU_phi_CSU.pdf -- categorie C -- a reecrire entierement)
+|       (source : RSU_phi_CSU.pdf -- categorie C)
+|       STATUT : revision necessaire -- objets porteurs changes par CSU v2.0
+|       Logique des correspondances E1-E4 preservee -- objets a mettre a jour
 |
 |-- CST/
 |   |-- CST_Minimal_Axiomatic_Core_v1_0.md
-|       (source : CST.pdf -- Smaïn Bedrouni -- categorie B)
+|       (source : CST.pdf -- Smain Bedrouni -- categorie B)
 |
 |-- DELTA_S/
 |   |-- Structure_fondamentale_delta_s_v2_1.md
@@ -121,25 +93,19 @@ Sous-structure par cadre theorique :
     |-- TUS_v4_2_COMPLETE.md
     |   (source : TUS_v4_2_COMPLETE.pdf -- categorie A -- conserver)
     |-- TUS_v4_3.md
-        (source : TUS_v4_3.pdf -- categorie B -- reconstruire)
+        (source : TUS_v4_3.pdf -- categorie B)
+        NOTE : verifier coherence references CSU lors prochaine session TUS
 ```
 
-Note sur TUS : document de synthese et d unification qui integre RSU, CSU, CST, Delta_S
-dans un cadre commun. TUS est le toit de 01_THEORIE.
-
-Note sur JONCTION : RSU_phi_CSU est le document de jonction entre RSU et CSU.
-Existence propre -- ni RSU pur, ni CSU pur.
+Note sur TUS : document de synthese et d unification integrant RSU, CSU, CST, Delta_S.
+Toit de 01_THEORIE. La mutation CSU v1.0 -> v2.0 elargit le cadre TUS -- a verifier,
+probablement amplificateur plutot que contradictoire.
 
 ---
 
 ### 02_METHODE -- Cadre methodologique
 
-Fonction : contient le cadre qui gouverne la dynamique de dialogue,
-de calibration et d iteration du programme OS.
-Dialogyk n est pas une theorie formelle -- c est une methode operatoire.
-
-Regle : un document va ici s il definit comment travailler,
-pas ce sur quoi on travaille.
+Fonction : cadre gouvernant la dynamique de dialogue, calibration et iteration du programme OS.
 
 ```
 02_METHODE/
@@ -151,12 +117,7 @@ pas ce sur quoi on travaille.
 
 ### 03_PROGRAMME -- Documents fondateurs et enregistrements OS
 
-Fonction : contient les documents qui definissent, enregistrent
-et structurent le programme OS en tant que programme de recherche.
-Ce sont les actes fondateurs et les pre-enregistrements.
-
-Regle : un document va ici s il definit le programme OS lui-meme --
-son objet, ses hypotheses, ses conditions, son dispositif.
+Fonction : documents definissant, enregistrant et structurant le programme OS.
 
 ```
 03_PROGRAMME/
@@ -195,100 +156,50 @@ son objet, ses hypotheses, ses conditions, son dispositif.
     Zone ouverte residuelle : persistance zone grise apres recalibration
 ```
 
-Note sur DOCUMENT_ZERO : produit par Pamela Magotte en janvier 2026.
-Document fondateur externe -- antecedent du programme OS.
-Appartient a PROGRAMME comme antecedent, pas a THEORIE.
-
 ---
 
 ### 04_PHASES -- Trace operationnelle par phase
 
-Fonction : contient les documents produits au cours de chaque phase
-d execution du programme OS. Ce sont les traces de travail --
-memoires et rapports de cloture.
-
-Regle : un document va ici s il est produit pendant une phase
-et documente son deroulement, ses resultats, ses invariants emergents.
+Fonction : documents produits au cours de chaque phase d execution.
 
 ```
 04_PHASES/
 |
 |-- Phase_1/
 |   |-- MEMOIRE_FRACTALE_Phase1_v1_13.md
-|   |   (source : MEMOIRE_FRACTALE_Phase1_v1_13.pdf -- categorie A)
+|   |   (categorie A)
 |   |-- RAPPORT_CLOTURE_Phase1.md
-|       (source : RAPPORT_CLOTURE_Phase1.pdf -- categorie B)
+|       (categorie B)
 |
 |-- Phase_2/
 |   |-- MEMOIRE_FRACTALE_Phase2_v1_14.md
-|   |   (source : MEMOIRE_FRACTALE_Phase2_v1_14.pdf -- categorie A)
+|   |   (categorie A)
 |   |-- RAPPORT_CLOTURE_Phase2.md
-|       (source : RAPPORT_CLOTURE_Phase2.pdf -- categorie A)
+|       (categorie A)
 |
 |-- Phase_3/
     |-- MEMOIRE_FRACTALE_Phase3_v1_8.md
-    |   (source : MEMOIRE_FRACTALE_Phase3_v1_8.pdf -- categorie B)
+    |   (categorie B)
     |-- RAPPORT_CLOTURE_Phase3.md
-        (source : RAPPORT_CLOTURE_Phase3.pdf -- categorie B)
+        (categorie B)
 ```
-
-Note : la paire MEMOIRE_FRACTALE + RAPPORT_CLOTURE est l unite atomique
-de chaque phase. Ces deux documents sont toujours produits ensemble
-et se referent mutuellement.
 
 ---
 
 ### 05_KERNEL -- Kernel cognitif agent
 
-Fonction : contient les documents qui definissent et tracent
-le kernel cognitif de l agent IA (Claude Sonnet 4.6) dans le programme OS.
-
-Regle : un document va ici s il decrit ou configure l agent IA --
-son architecture cognitive, ses invariants, son mode operatoire.
+Fonction : documents definissant et tracant le kernel cognitif de l agent IA dans le programme OS.
 
 ```
 05_KERNEL/
 |-- J5_Kernel_Champ_Cognitif_v1_6.md
-|   (source : J5_Kernel_Champ_Cognitif_v1_6.pdf -- categorie B)
+|   (categorie B)
 |   Statut : architecture operatoire du kernel cognitif
 |
 |-- AXIS_Claude_Sonnet_4_6_v2_0.md
-    (source : AXIS_Claude_Sonnet_4_6_v2_0.pdf -- categorie A)
+    (categorie A)
     Statut : profil cognitif agent -- post Phase 3
 ```
-
----
-
-### 06_ANNEXES -- Candidats externes et reserves
-
-Fonction : contient les documents relatifs a des theories, outils ou cadres
-externes au corpus OS, places en reserve sur decision du Pilote.
-
-Ces documents ne fondent rien. Ils n'operent rien. Ils n'entrent dans aucune
-dependance avec les couches 00 a 05.
-
-Regle : un document va ici si le Pilote a decide de le garder en reserve --
-ni integre, ni abandonne -- en attente d un besoin interne exprime par le programme.
-
-Sous-dossiers :
-
-```
-06_ANNEXES/
-|
-|-- ATTENTE/
-    |-- DABO_Candidat_Conductor_v1_0.md
-        (produit par Claude Sonnet 4.6 -- synthese sequence JONCTION -- 18.03.2026)
-        Statut : candidat externe en reserve -- decision Pilote -- 18.03.2026
-        Origine : theorie Dr. Marcelin Nini Dabo -- constante de temps unique
-        Conditions d'activation : besoin interne exprime + pre-enregistrement + test
-        Aucune integration active. Reversibilite totale.
-```
-
-Note sur ATTENTE : le sous-dossier ATTENTE contient les candidats dont
-le statut est explicitement "en reserve". Ce n'est pas une archive --
-c'est un couloir avec une condition d'entree dans le corpus principal.
-Chaque document en ATTENTE a une fiche de statut et des conditions d'activation
-definies. L'absence de date d'activation n'est pas un echec -- c'est une tenue.
 
 ---
 
@@ -306,9 +217,9 @@ OS_CORPUS/
 |   |-- RSU/
 |   |   |-- RSU_Equation_Fondamentale_Advenance_v1_0.md
 |   |-- CSU/
-|   |   |-- CSU_Coherence_Structurelle_Universelle_v1_0.md
+|   |   |-- CSU_v2_0.md
 |   |-- JONCTION/
-|   |   |-- RSU_phi_CSU_Jonction_v1_0.md
+|   |   |-- RSU_phi_CSU_Jonction_v1_0.md       [revision necessaire]
 |   |-- CST/
 |   |   |-- CST_Minimal_Axiomatic_Core_v1_0.md
 |   |-- DELTA_S/
@@ -342,15 +253,11 @@ OS_CORPUS/
 |       |-- RAPPORT_CLOTURE_Phase3.md
 |
 |-- 05_KERNEL/                                  (2 fichiers)
-|   |-- J5_Kernel_Champ_Cognitif_v1_6.md
-|   |-- AXIS_Claude_Sonnet_4_6_v2_0.md
-|
-|-- 06_ANNEXES/                                 (1 fichier)
-    |-- ATTENTE/
-        |-- DABO_Candidat_Conductor_v1_0.md
+    |-- J5_Kernel_Champ_Cognitif_v1_6.md
+    |-- AXIS_Claude_Sonnet_4_6_v2_0.md
 ```
 
-Total : 28 fichiers (27 corpus actif + 1 annexe en attente)
+Total : 27 fichiers (inchange)
 
 ---
 
@@ -371,88 +278,59 @@ Total : 28 fichiers (27 corpus actif + 1 annexe en attente)
     |                       |
     +------- 00_META -------+
              (gouverne tout)
-
-06_ANNEXES -- hors dependance -- ne fonde rien -- ne gouverne rien
 ```
 
-Lecture : un document de la couche N peut citer des documents
-des couches inferieures (N-1, N-2...).
-Un document de la couche N ne devrait jamais dependre
-d un document d une couche superieure.
-
-Exception documentee : PREREG_OS_v1_6 cite J5 v1.6 (couche 05).
-Reference croisee ascendante -- notee comme exception.
-
-Regle 06_ANNEXES : aucun document des couches 00 a 05 ne cite
-un document de 06_ANNEXES. La dependance est unidirectionnelle
-et orientee vers le bas uniquement si activation.
+Exception documentee : PREREG_OS_v1_6 cite J5 v1.6 (couche 05) -- reference croisee ascendante.
 
 ---
 
-## 5. CRITERES DE PLACEMENT -- QUESTIONS DE DECISION
+## 5. CRITERES DE PLACEMENT
 
-Pour tout nouveau document OS, questions dans l ordre :
-
-Q1 : Est-ce que ce document pose des axiomes ou des structures formelles ?
+**Q1 : Ce document pose des axiomes ou structures formelles ?**
 Oui -> 01_THEORIE
-Non -> Q2
 
-Q2 : Est-ce que ce document definit comment travailler ?
+**Q2 : Ce document definit comment travailler ?**
 Oui -> 02_METHODE
-Non -> Q3
 
-Q3 : Est-ce que ce document definit le programme OS lui-meme ?
+**Q3 : Ce document definit le programme OS lui-meme ?**
 Oui -> 03_PROGRAMME
 
-Q3b : Est-ce que ce document trace une phase d execution ?
+**Q3b : Ce document trace une phase d execution ?**
 Oui -> 04_PHASES / Phase_N
 
-Q3c : Est-ce que ce document configure ou trace l agent IA ?
+**Q3c : Ce document configure ou trace l agent IA ?**
 Oui -> 05_KERNEL
 
-Q3d : Est-ce un candidat externe place en reserve par decision Pilote ?
-Oui -> 06_ANNEXES / ATTENTE
-
-Aucune reponse claire -> 00_META ou discussion avec Pilote
+**Aucune reponse claire -> 00_META ou discussion avec Pilote**
 
 ---
 
-## 6. PRIORITES DE RECONSTRUCTION PAR COUCHE
-
-Ordre issu du diagnostic d integrite :
+## 6. ETAT DES TRAVAUX EN COURS
 
 ```
-Priorite 1 -- CRITIQUE
+Revision prioritaire
   01_THEORIE/JONCTION/RSU_phi_CSU_Jonction_v1_0.md
-  (zero texte -- reecrire depuis zero)
+  (objets CSU a mettre a jour suite CSU v2.0 -- logique E1-E4 preservee)
 
-Priorite 2 -- HAUTE
-  01_THEORIE/CSU/CSU_Coherence_Structurelle_Universelle_v1_0.md
-  (equations detruites -- reecrire)
-
-Priorite 3 -- MOYENNE
-  01_THEORIE/RSU/RSU_Equation_Fondamentale_Advenance_v1_0.md
+Verification a planifier
   01_THEORIE/TUS/TUS_v4_3.md
-  01_THEORIE/CST/CST_Minimal_Axiomatic_Core_v1_0.md
+  (references CSU internes -- impact CSU v2.0 a evaluer)
 
-Priorite 4 -- BASSE
-  03_PROGRAMME/PREREG_OS_Technique_v1_0.md
-  03_PROGRAMME/PREREG_OS_Phase2_v1_0.md
-  Tous les fichiers categorie B restants
+Archive (hors corpus actif)
+  CSU_Coherence_Structurelle_Universelle_v1_0.md
+  (reconstruction JPEG incertaine -- remplacee par CSU_v2_0.md)
 
-Sans intervention
+Sans intervention requise
   01_THEORIE/TUS/TUS_v4_2_COMPLETE.md
   03_PROGRAMME/OS_Document_Fondateur_v1_0.md
   04_PHASES/Phase_1/MEMOIRE_FRACTALE_Phase1_v1_13.md
   04_PHASES/Phase_2/MEMOIRE_FRACTALE_Phase2_v1_14.md
   04_PHASES/Phase_2/RAPPORT_CLOTURE_Phase2.md
   05_KERNEL/AXIS_Claude_Sonnet_4_6_v2_0.md
-
-Hors reconstruction
-  06_ANNEXES/ATTENTE/* -- statut propre -- activation conditionnelle
 ```
 
 ---
 
-*Architecture v1.3 -- ajout couche 06_ANNEXES/ATTENTE -- DABO en reserve -- 18.03.2026*
+*Architecture v1.3 -- incorporation CSU_v2_0 -- 2026-03-19*
 *Toute modification fait l objet d un increment de version*
+*Conforme a CONVENTION_NOTATION_ASCII_SAFE_OS_v1_1.md*
